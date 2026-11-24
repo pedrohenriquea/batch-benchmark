@@ -10,7 +10,7 @@ Micrometer → Prometheus → Grafana.
 | Componente | Tecnologia | Porta |
 |---|---|---|
 | Aplicação | Java 21 + Spring Boot 3.3 | 8080 |
-| Banco de dados | PostgreSQL 16 | 5432 |
+| Banco de dados | PostgreSQL 16 | 5433 (host) → 5432 (contêiner) |
 | Coleta de métricas | Prometheus | 9090 |
 | Visualização | Grafana | 3000 |
 
@@ -116,5 +116,10 @@ mvn spring-boot:run
 - **Repetições**: por padrão 5 por cenário; aumente (`-Reps 10/30`) para maior robustez estatística.
 - **Variáveis controladas**: pool de conexões, `chunkSize`, limites de CPU/memória e
   volume de dados são fixados entre execuções.
-- **reWriteBatchedInserts=true**: habilita o agrupamento real dos comandos na camada
-  do driver PostgreSQL — essencial para uma comparação justa de batching.
+- **Porta do PostgreSQL**: publicada em `5433` no host para não conflitar com uma
+  instalação local do PostgreSQL (que costuma ocupar a `5432`). Dentro da rede do
+  Compose, a aplicação acessa o banco em `postgres:5432`.
+- **reWriteBatchedInserts=true**: faz o driver PostgreSQL reescrever lotes de `INSERT`
+  em instruções multi-valores, acelerando a carga inicial dos dados. Não afeta os
+  `UPDATE`s: nas estratégias `jpa` e `native`, os lotes de atualização usam o mesmo
+  mecanismo de batch do JDBC, o que mantém a comparação equivalente.

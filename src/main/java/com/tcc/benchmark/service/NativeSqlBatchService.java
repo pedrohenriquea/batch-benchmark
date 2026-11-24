@@ -16,8 +16,8 @@ import java.util.List;
  * Estrategia 2 - SQL nativo com batch update (foco do estudo).
  * Le os identificadores por keyset e aplica os UPDATEs em lote via
  * {@link JdbcTemplate#batchUpdate}, sem a camada de mapeamento objeto-relacional.
- * Com {@code reWriteBatchedInserts=true} na URL JDBC, o driver PostgreSQL reescreve
- * o lote em poucas idas ao banco.
+ * O driver JDBC envia o lote de UPDATEs agrupado, reduzindo as idas e voltas ao banco
+ * (o mesmo mecanismo usado pelo Hibernate na estrategia JPA).
  */
 @Service
 public class NativeSqlBatchService {
