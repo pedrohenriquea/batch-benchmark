@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: batch-benchmark
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/benchmark?reWriteBatchedInserts=true}
+    username: ${SPRING_DATASOURCE_USERNAME:benchmark}
+    password: ${SPRING_DATASOURCE_PASSWORD:benchmark}
+    hikari:
+      maximum-pool-size: ${POOL_SIZE:20}
+      minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: ${HIBERNATE_BATCH_SIZE:1000}
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    prometheus:
+      access: read_only
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  metrics:
+    tags:
+      application: batch-benchmark
+
+server:
+  port: 8080

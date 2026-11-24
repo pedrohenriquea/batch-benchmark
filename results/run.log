@@ -1,0 +1,68 @@
+Aguardando a aplicacao em http://localhost:8080 ...
+Aplicacao disponivel.
+
+=== Carregando 100000 registros ===
+Carga concluida: 100000 registros em 939 ms
+  [jpa] warm-up...
+  [jpa] rep 1/5: 4.511 ms | 22.167 reg/s
+  [jpa] rep 2/5: 4.458 ms | 22.431 reg/s
+  [jpa] rep 3/5: 4.257 ms | 23.493 reg/s
+  [jpa] rep 4/5: 4.359 ms | 22.943 reg/s
+  [jpa] rep 5/5: 4.366 ms | 22.903 reg/s
+  [native] warm-up...
+  [native] rep 1/5: 3.373 ms | 29.646 reg/s
+  [native] rep 2/5: 3.330 ms | 30.033 reg/s
+  [native] rep 3/5: 3.196 ms | 31.292 reg/s
+  [native] rep 4/5: 3.320 ms | 30.121 reg/s
+  [native] rep 5/5: 2.931 ms | 34.117 reg/s
+  [native-bulk] warm-up...
+  [native-bulk] rep 1/5: 803 ms | 124.483 reg/s
+  [native-bulk] rep 2/5: 811 ms | 123.344 reg/s
+  [native-bulk] rep 3/5: 712 ms | 140.355 reg/s
+  [native-bulk] rep 4/5: 673 ms | 148.645 reg/s
+  [native-bulk] rep 5/5: 680 ms | 147.120 reg/s
+
+=== Carregando 500000 registros ===
+Carga concluida: 500000 registros em 4.365 ms
+  [jpa] warm-up...
+  [jpa] rep 1/5: 20.558 ms | 24.321 reg/s
+  [jpa] rep 2/5: 20.302 ms | 24.628 reg/s
+  [jpa] rep 3/5: 20.590 ms | 24.283 reg/s
+  [jpa] rep 4/5: 24.444 ms | 20.455 reg/s
+  [jpa] rep 5/5: 31.580 ms | 15.833 reg/s
+  [native] warm-up...
+  [native] rep 1/5: 14.897 ms | 33.565 reg/s
+  [native] rep 2/5: 14.893 ms | 33.573 reg/s
+  [native] rep 3/5: 15.769 ms | 31.708 reg/s
+  [native] rep 4/5: 14.891 ms | 33.577 reg/s
+  [native] rep 5/5: 15.295 ms | 32.690 reg/s
+  [native-bulk] warm-up...
+  [native-bulk] rep 1/5: 13.490 ms | 37.065 reg/s
+  [native-bulk] rep 2/5: 3.547 ms | 140.974 reg/s
+  [native-bulk] rep 3/5: 3.151 ms | 158.696 reg/s
+  [native-bulk] rep 4/5: 3.512 ms | 142.351 reg/s
+  [native-bulk] rep 5/5: 3.604 ms | 138.742 reg/s
+
+=== Carregando 1000000 registros ===
+Carga concluida: 1000000 registros em 15.160 ms
+  [jpa] warm-up...
+  [jpa] rep 1/5: 47.515 ms | 21.046 reg/s
+  [jpa] rep 2/5: 40.666 ms | 24.590 reg/s
+  [jpa] rep 3/5: 51.880 ms | 19.275 reg/s
+  [jpa] rep 4/5: 38.301 ms | 26.109 reg/s
+  [jpa] rep 5/5: 38.689 ms | 25.847 reg/s
+  [native] warm-up...
+  [native] rep 1/5: 30.139 ms | 33.180 reg/s
+  [native] rep 2/5: 30.567 ms | 32.715 reg/s
+  [native] rep 3/5: 43.131 ms | 23.185 reg/s
+  [native] rep 4/5: 29.246 ms | 34.193 reg/s
+  [native] rep 5/5: 29.506 ms | 33.891 reg/s
+  [native-bulk] warm-up...
+  [native-bulk] rep 1/5: 16.204 ms | 61.714 reg/s
+  [native-bulk] rep 2/5: 20.241 ms | 49.404 reg/s
+  [native-bulk] rep 3/5: 7.076 ms | 141.319 reg/s
+  [native-bulk] rep 4/5: 27.542 ms | 36.309 reg/s
+  [native-bulk] rep 5/5: 7.664 ms | 130.487 reg/s
+
+Resultados salvos em results/results.csv
+Gere o resumo com: python analyze_results.py

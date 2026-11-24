@@ -1,0 +1,22 @@
+# Build
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Ambiente local
+.env
